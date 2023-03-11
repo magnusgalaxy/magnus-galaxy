@@ -36,4 +36,9 @@ class Tag extends Model
             ->saveSlugsTo('slug')
             ->doNotGenerateSlugsOnUpdate();
     }
+
+    public function blogs()
+    {
+        return $this->belongsToMany(Blog::class);
+    }
 }
