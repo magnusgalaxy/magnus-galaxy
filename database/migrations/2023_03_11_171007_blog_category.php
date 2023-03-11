@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->foreignId('blog_id')->constrained('blogs')->references('id')->onDelete('cascade');
-        $table->foreignId('category_id')->constrained('categories')->references('id')->onDelete('cascade');
-        $table->boolean('is_active')->default(true);
-        $table->primary(['blog_id', 'category_id']);
+        Schema::create('blog_category', function (Blueprint $table) {
+            $table->foreignId('blog_id')->constrained('blogs')->references('id')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->references('id')->onDelete('cascade');
+            $table->boolean('is_active')->default(true);
+            $table->primary(['blog_id', 'category_id']);
+        });
     }
 
     /**
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('blog_category');
     }
 };
