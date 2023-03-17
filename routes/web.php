@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [PagesController::class, 'homepage'])
+    ->name('homepage');
 
 Route::prefix('/blogs')->name('blog.')->group(function(){
     Route::get('/', [BlogController::class, 'index'])
