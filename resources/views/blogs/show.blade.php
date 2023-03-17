@@ -18,17 +18,17 @@
     {{-- Share Icons --}}
     <div class="flex items-center py-10">
         <span class="pr-5 font-body font-medium text-primary dark:text-white">Share</span>
-        <a href="/">
+        <a href="https://www.facebook.com/sharer.php?caption={{ $blog->name }}&u={{ url()->full() }}&picture={{ $blog->image }}" target="_blank">
             <i class="bx bxl-facebook text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
         </a>
-        <a href="/">
+        <a href="http://twitter.com/share?text={{ $blog->name }}&url={{ url()->full() }}" target="_blank">
             <i class="bx bxl-twitter pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
         </a>
-        <a href="/">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url()->full() }}&title={{ $blog->name }}&source=magnusgalaxy.com" target="_blank">
             <i class="bx bxl-linkedin pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
         </a>
-        <a href="/">
-            <i class="bx bxl-reddit pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
+        <a href="https://api.whatsapp.com/send?text={{ url()->full() }}" target="_blank">
+            <i class="bx bxl-whatsapp pl-2 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
         </a>
     </div>
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController; 
+use App\Http\Controllers\PagesController; 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
+Route::get('/', [PagesController::class, 'homepage'])
+    ->name('homepage');
+
+Route::prefix('/blogs')->name('blog.')->group(function(){
+    Route::get('/', [BlogController::class, 'index'])
+        ->name('index');
+    Route::get('/{blog:slug}', [BlogController::class, 'show'])
+        ->name('show');
 });
 
-Route::get('/blogs/{blog:slug}', [BlogController::class, 'show'])
-    ->name('blog.show');
+Route::view('/contact', 'pages.contact')
+    ->name('contact');
+
+Route::post('/contact', [PagesController::class, 'sendEnquiry'])
+    ->name('contact');

@@ -50,7 +50,7 @@ class Blog extends Model
     protected static function booted()
     {
         static::creating(function ($blog) {
-            $blog->user_id = auth()->user()->id;
+            $blog->user_id = $blog->user_id ?? auth()->user()->id;
         });
     }
 

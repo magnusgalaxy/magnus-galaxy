@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+    public function index(){
+        $blogs = Blog::with('categories')->paginate(20);
+
+        return view('blogs.index', compact('blogs'));
+    }
+
     public function show(Blog $blog){
         return view('blogs.show', compact('blog'));
     }
