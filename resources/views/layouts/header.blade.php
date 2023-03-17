@@ -21,17 +21,17 @@
             <ul class="flex items-center">
                 <li class="group relative mr-6 mb-1">
                     <div class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow"></div>
-                    <a href="/" class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Intro</a>
+                    <a href="{{ url('/') }}" class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Intro</a>
                 </li>
               
                 <li class="group relative mr-6 mb-1">
                     <div class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow"></div>
-                    <a href="/blogs" class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Blog</a>
+                    <a href="{{ url('/blogs') }}" class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Blog</a>
                 </li>
               
               <li class="group relative mr-6 mb-1">
                 <div class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow"></div>
-                <a href="/contact" class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Contact</a>
+                <a href="{{ url('/contact') }}" class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Contact</a>
               </li>
               
               <li>
@@ -40,3 +40,22 @@
             </ul>
         </div>
     </header>
+    <div class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-80 opacity-0 transition-opacity lg:hidden" :class="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : ''">
+        <div class="ml-auto w-2/3 bg-green p-4 md:w-1/3">
+            <i class="bx bx-x absolute top-0 right-0 mt-4 mr-4 text-4xl text-white" @click="isMobileMenuOpen = false"></i>
+            <ul class="mt-8 flex flex-col">
+                <li>
+                    <a href="{{ url('/') }}" class="mb-3 block px-2 font-body text-lg font-medium text-white">Intro</a>
+                </li>
+                
+                <li>
+                    <a href="{{ url('/blogs') }}" class="mb-3 block px-2 font-body text-lg font-medium text-white">Blogs</a>
+                </li>
+                
+                <li>
+                    <a href="{{ url('/contact') }}" class="mb-3 block px-2 font-body text-lg font-medium text-white">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>

@@ -4,7 +4,7 @@
             <img src="{{ asset('assets/site-images/logo.svg') }}" alt="logo" />
         </a>
         <p class="pt-5 font-body font-light text-primary dark:text-white sm:pt-0">
-            © <script>document.write(new Date().getFullYear())</script>
+            © {{ now()->format('Y') }}
             {{ config('app.name', 'Magnus Galaxy') }}
         </p>
     </div>
