@@ -18,5 +18,9 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/blogs/{blog:slug}', [BlogController::class, 'show'])
-    ->name('blog.show');
+Route::prefix('/blogs')->name('blog.')->group(function(){
+    Route::get('/', [BlogController::class, 'index'])
+        ->name('index');
+    Route::get('/{blog:slug}', [BlogController::class, 'show'])
+        ->name('show');
+});
