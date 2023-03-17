@@ -24,3 +24,6 @@ Route::prefix('/blogs')->name('blog.')->group(function(){
     Route::get('/{blog:slug}', [BlogController::class, 'show'])
         ->name('show');
 });
+
+Route::view('/contact', 'pages.contact')
+    ->name('contact');

@@ -5,7 +5,7 @@
     <p class="pt-3 font-body text-xl font-light text-primary dark:text-white">
         Stay up-to-date with the latest trends and best practices in technology, and take your skills to the next level with our informative and engaging content.
     </p>
-    <a href="/"class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl">
+    <a href="{{ route('contact') }}"class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl">
       Say Hello!
     </a>
 </div>
