@@ -15,6 +15,16 @@
         @vite('resources/css/app.css')
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         @livewireStyles
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-311C482TK9"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-311C482TK9');
+        </script>
     </head>
 <body  x-data="global()" x-init="themeInit()" :class="isMobileMenuOpen ? 'max-h-screen overflow-hidden relative' : ''" class="dark:bg-primary">
     <div id="main">
