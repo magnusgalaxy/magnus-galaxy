@@ -6,7 +6,10 @@
         <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="{{ asset('assets/site-images/favicon.png') }}" />
-        <title>Home Page | Magnus Galaxy</title>
+        
+        {{-- SEO Tags --}}
+        {!! SEO::generate(true) !!}
+
         <link href="https://fonts.gstatic.com" crossorigin="crossorigin" rel="preconnect" />
         <link as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="preload"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
