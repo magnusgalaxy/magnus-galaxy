@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     public function index(){
         //SEO Tags
-        SEOTools::setTitle(config('app.name').' - Blogs');
+        SEOTools::setTitle('Blogs');
         SEOTools::setDescription("Explore the latest posts and updates on PHP, Laravel, Reactjs, Angular, and other programming languages on Magnus Galaxy's blogs page. Stay updated with our insightful articles and tutorials.");
         SEOTools::opengraph()->setUrl(url()->current());
         SEOTools::opengraph()->addProperty('type', 'articles');
