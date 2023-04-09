@@ -28,6 +28,9 @@
 
             gtag('config', 'G-311C482TK9');
         </script>
+
+        {{-- Google Adsense --}}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8044477511073741" crossorigin="anonymous"></script>
     </head>
 <body  x-data="global()" x-init="themeInit()" :class="isMobileMenuOpen ? 'max-h-screen overflow-hidden relative' : ''" class="dark:bg-primary">
     <div id="main">
