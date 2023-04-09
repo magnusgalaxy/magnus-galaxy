@@ -30,3 +30,6 @@ Route::view('/contact', 'pages.contact')
 
 Route::post('/contact', [PagesController::class, 'sendEnquiry'])
     ->name('contact');
+
+Route::view('/privacy-policy', 'pages.privacy')
+    ->name('privacy');
