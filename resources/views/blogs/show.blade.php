@@ -18,7 +18,7 @@
     {{-- Share Icons --}}
     <div class="flex items-center py-10">
         <span class="pr-5 font-body font-medium text-primary dark:text-white">Share</span>
-        <a href="https://www.facebook.com/sharer.php?caption={{ $blog->name }}&u={{ url()->full() }}&picture={{ $blog->image }}" target="_blank">
+        <a href="https://www.facebook.com/sharer.php?caption={{ $blog->name }}&u={{ url()->full() }}&picture={{ asset('storage/'.$blog->image) }}" target="_blank">
             <i class="bx bxl-facebook text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"></i>
         </a>
         <a href="http://twitter.com/share?text={{ $blog->name }}&url={{ url()->full() }}" target="_blank">

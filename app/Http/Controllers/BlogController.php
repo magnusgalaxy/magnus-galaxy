@@ -8,6 +8,7 @@ use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class BlogController extends Controller
 {
@@ -43,13 +44,17 @@ class BlogController extends Controller
         OpenGraph::addProperty('type', 'article');
         OpenGraph::addProperty('locale', 'pt-br');
         OpenGraph::addProperty('locale:alternate', ['pt-pt', 'en-us']);
+        OpenGraph::addImage(asset('storage/'.$blog->image));
 
-        OpenGraph::addImage(asset('assets/site-images/logo.svg'));
+        TwitterCard::setTitle($blog->meta_title ?? $blog->title);
+        TwitterCard::setSite('@magnusgalaxy');
+        TwitterCard::setType('summary');
+        TwitterCard::setImage(asset('storage/'.$blog->image));
 
         JsonLd::setTitle($blog->meta_title ?? $blog->title);
         JsonLd::setDescription($blog->meta_description);
         JsonLd::setType('Article');
-        JsonLd::addImage(asset('assets/site-images/logo.svg'));
+        JsonLd::addImage(asset('storage/'.$blog->image));
 
         return view('blogs.show', compact('blog'));
     }
